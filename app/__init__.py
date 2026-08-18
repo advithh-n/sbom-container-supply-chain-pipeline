@@ -1,0 +1,2 @@
+"""Grid telemetry demonstration service."""
+

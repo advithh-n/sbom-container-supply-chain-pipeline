@@ -1,0 +1,12 @@
+scan:
+  scanners:
+    - vuln
+    - secret
+    - misconfig
+  skip-dirs:
+    - .git
+vulnerability:
+  ignore-unfixed: false
+severity:
+  - CRITICAL
+

@@ -1,0 +1,4 @@
+fail-on-severity: critical
+only-fixed: false
+check-for-app-update: false
+
