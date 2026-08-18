@@ -76,7 +76,7 @@ jobs:
           cache-db: true
 
       - name: Trivy image report for GitHub code scanning
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: "${{ env.LOCAL_IMAGE }}"
           format: sarif
@@ -92,7 +92,7 @@ jobs:
           sarif_file: artifacts/trivy-results.sarif
 
       - name: Enforce independent Trivy critical-CVE gate
-        uses: aquasecurity/trivy-action@0.36.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: "${{ env.LOCAL_IMAGE }}"
           format: table
