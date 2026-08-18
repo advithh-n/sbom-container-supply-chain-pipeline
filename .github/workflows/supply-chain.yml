@@ -139,7 +139,7 @@ jobs:
       - name: Push verified image by digest
         if: github.event_name != 'pull_request'
         id: push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
