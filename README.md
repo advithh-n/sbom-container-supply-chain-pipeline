@@ -32,12 +32,13 @@ flowchart LR
 - **Software inventory:** Syft produces both SPDX JSON and CycloneDX JSON SBOMs.
 - **Independent vulnerability checks:** Grype scans the SPDX SBOM; Trivy scans the
   built image and repository.
-- **Policy as code:** any fixable critical vulnerability blocks the release.
+- **Policy as code:** any critical vulnerability blocks the release.
 - **Provenance:** successful main-branch images are pushed by digest and signed using
   GitHub OIDC and Sigstore/Cosign—no long-lived signing key.
 - **Attestation:** GitHub build provenance binds the source workflow to the image digest.
-- **Runtime hardening:** non-root UID, read-only filesystem, dropped Linux capabilities,
-  no-new-privileges and bounded process/memory resources.
+- **Runtime hardening:** digest-pinned Chainguard build/runtime stages, non-root UID
+  65532, read-only filesystem, dropped Linux capabilities, no-new-privileges and
+  bounded process/memory resources.
 - **Audit evidence:** the workflow retains SBOMs, scan results and JSON/Markdown
   compliance reports.
 
@@ -86,4 +87,3 @@ This project demonstrates a reference control plane, not a production electricit
 system. Production adoption would additionally require approved registries, VEX handling,
 change control, secrets management, environment promotion and organisation-specific risk
 acceptance.
-
